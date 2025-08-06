@@ -1,0 +1,400 @@
+/* خطوط Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+/* إعدادات عامة */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(120deg, #23243a 0%, #4e54c8 100%);
+  color: #f5f7fa;
+  min-height: 100vh;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* شريط التنقل */
+header {
+  background: rgba(36,51,67,0.98);
+  box-shadow: 0 2px 12px rgba(78,84,200,0.10);
+  padding: 0;
+  border-radius: 0 0 18px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 18px 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.15em;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: linear-gradient(90deg, #4e54c8 60%, #00e5ff 100%);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(78,84,200,0.13);
+}
+
+/* القسم الرئيسي */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px 20px;
+  background: linear-gradient(120deg, #4e54c8 60%, #00e5ff 100%);
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  animation: fadeInDown 1.2s;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-40px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.hero-title {
+  font-size: 3em;
+  margin-bottom: 18px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px #00e5ff44;
+  animation: popIn 1.2s;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8);}
+  80% { opacity: 1; transform: scale(1.05);}
+  100% { transform: scale(1);}
+}
+
+.hero-sub {
+  font-size: 1.4em;
+  color: #e0e7ff;
+  margin-bottom: 36px;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #00e5ff 60%, #4e54c8 100%);
+  color: #23243a;
+  padding: 16px 38px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.15em;
+  box-shadow: 0 2px 12px rgba(0,229,255,0.13);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+  margin-top: 18px;
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #4e54c8 60%, #00e5ff 100%);
+  color: #fff;
+  transform: scale(1.07);
+}
+
+/* المميزات */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 36px;
+  padding: 60px 20px;
+  background: rgba(36,51,67,0.92);
+  border-radius: 32px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 32px rgba(78,84,200,0.10);
+}
+
+.feature-box {
+  background: linear-gradient(120deg, #23243a 60%, #4e54c8 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,229,255,0.10);
+  padding: 32px 24px;
+  width: 320px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: featureAppear 1.2s;
+}
+
+@keyframes featureAppear {
+  0% { opacity: 0; transform: translateY(40px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.feature-box:hover {
+  transform: translateY(-12px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 12px 32px rgba(0,229,255,0.18);
+}
+
+.feature-box::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, #00e5ff55 0%, transparent 80%);
+  z-index: 0;
+  animation: pulse 2.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.7;}
+  to { opacity: 1;}
+}
+
+.feature-box h3 {
+  color: #00e5ff;
+  margin-bottom: 14px;
+  font-size: 1.35em;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-box p {
+  font-size: 1.05em;
+  color: #e0e7ff;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-box pre, 
+.feature-box code {
+  background: #1d2b3a;
+  color: #00e5ff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.97em;
+  direction: ltr;
+  text-align: left;
+  overflow-x: auto;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 8px #00e5ff22;
+  transition: box-shadow 0.3s;
+}
+
+.feature-box pre:hover {
+  box-shadow: 0 4px 16px #00e5ff44;
+}
+
+/* العناوين */
+.section-title {
+  font-size: 2.5em;
+  color: #00e5ff;
+  font-weight: bold;
+  margin-bottom: 32px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 12px #00e5ff33;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #00e5ff 60%, #4e54c8 100%);
+  border-radius: 2px;
+  margin: 10px auto 0 auto;
+  opacity: 0.8;
+}
+
+/* التذييل */
+footer {
+  text-align: center;
+  padding: 28px 0;
+  background: linear-gradient(90deg, #4e54c8 60%, #00e5ff 100%);
+  color: #fff;
+  margin-top: 60px;
+  border-radius: 0 0 18px 18px;
+  font-size: 1.1em;
+  box-shadow: 0 -2px 12px rgba(0,229,255,0.10);
+  letter-spacing: 1px;
+  animation: fadeIn 2s;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 36px 8px;
+  }
+  .feature-box {
+    width: 98%;
+    max-width: 400px;
+  }
+  .hero {
+    padding: 60px 8px 40px 8px;
+  }
+}
+
+/* تأثيرات إضافية */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23243a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #4e54c8 60%, #00e5ff 100%);
+  border-radius: 8px;
+}
+/* filepath: c:\Users\nm458\OneDrive\سطح المكتب\Good jop\my portfolio\style.css */
+/* ...existing code... */
+main.contact-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+.contact-section {
+  background: linear-gradient(120deg, #23243a 60%, #4e54c8 100%);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-radius: 22px;
+  box-shadow: 0 4px 32px rgba(0,229,255,0.13);
+  max-width: 420px;
+  width: 100%;
+  color: #fff;
+  margin: 2rem 0;
+  animation: fadeIn 1.2s;
+}
+
+.contact-section .section-title {
+  color: #00e5ff;
+  margin-bottom: 24px;
+  font-size: 2em;
+  text-align: center;
+  text-shadow: 0 2px 12px #00e5ff33;
+}
+
+.contact-form label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: bold;
+  color: #e0e7ff;
+  letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #4e54c8;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #23243a;
+  color: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #00e5ff22;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00e5ff;
+  outline: none;
+  box-shadow: 0 4px 16px #00e5ff44;
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, #00e5ff 60%, #4e54c8 100%);
+  color: #23243a;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  margin-top: 8px;
+  box-shadow: 0 2px 12px rgba(0,229,255,0.13);
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #4e54c8 60%, #00e5ff 100%);
+  color: #fff;
+  transform: scale(1.05);
+}
+/* ...existing code... */
+/* ...existing code... */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  background: linear-gradient(120deg, #23243a 60%, #4e54c8 100%);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,229,255,0.10);
+  padding: 2.5rem 2rem;
+  margin: 2.5rem auto;
+  max-width: 900px;
+  animation: fadeIn 1.2s;
+}
+
+.about-img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px #00e5ff33;
+  border: 4px solid #00e5ff;
+  transition: transform 0.4s, box-shadow 0.4s;
+  background: #18192a;
+}
+.about-img:hover {
+  transform: scale(1.07) rotate(-3deg);
+  box-shadow: 0 8px 40px #00e5ff44;
+}
+
+.about-content {
+  flex: 1;
+  color: #e0e7ff;
+  animation: slideIn 1.2s;
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .about-img {
+    margin: 0 auto;
+  }
+}
+/* ...existing code... */
